@@ -1,6 +1,7 @@
 import { MenuIcon } from "lucide-react";
 import Avatar from "./_components/avatar";
 import Button from "./_components/button";
+import CategorySelector from "./_components/category-selector";
 import SearchInput from "./_components/search-input";
 
 const currentUser = {
@@ -27,6 +28,14 @@ export default function Home() {
       </header>
 
       <SearchInput />
+
+      <section>
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-lg font-bold">Drink Category</h2>
+          <button className="text-sm text-silver">See All</button>
+        </div>
+        <CategorySelector />
+      </section>
     </main>
   );
 }
