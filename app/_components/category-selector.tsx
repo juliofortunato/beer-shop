@@ -17,7 +17,8 @@ export default function CategorySelector() {
   return (
     <div className="flex items-center gap-4">
       {CATEGORIES_MOCK.map((category, idx) => {
-        const classes = clsx("p-4 rounded-xl bg-white font-medium", {
+        const classes = clsx("p-4 rounded-xl font-medium", {
+          "bg-white": activeCategory !== category,
           "bg-primary text-white": activeCategory === category,
         });
 
