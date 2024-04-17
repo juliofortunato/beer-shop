@@ -9,13 +9,11 @@ import SizeSelector from "./_components/size-selector";
 
 interface ProductPageProps {
   params: {
-    product?: string;
+    product: string;
   };
 }
 
 export default function ProductPage({ params }: ProductPageProps) {
-  if (!params.product) return <h1>caiu aqui</h1>;
-
   const id = params.product?.split("-")[0];
   const product = getProductById(id);
 
