@@ -2,6 +2,7 @@ import { MenuIcon } from "lucide-react";
 import Avatar from "./_components/avatar";
 import Button from "./_components/button";
 import CategorySelector from "./_components/category-selector";
+import ProductList from "./_components/product-list";
 import SearchInput from "./_components/search-input";
 
 const currentUser = {
@@ -14,7 +15,7 @@ export default function Home() {
   return (
     <main className="px-6 py-10 grid gap-6">
       <nav className="flex items-center justify-between">
-        <Button>
+        <Button variant="icon">
           <MenuIcon />
         </Button>
         <button>
@@ -35,6 +36,14 @@ export default function Home() {
           <button className="text-sm text-silver">See All</button>
         </div>
         <CategorySelector />
+      </section>
+
+      <section>
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-lg font-bold">Popular</h2>
+          <button className="text-sm text-silver">See All</button>
+        </div>
+        <ProductList />
       </section>
     </main>
   );
