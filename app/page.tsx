@@ -33,7 +33,7 @@ export default function Home() {
       <section>
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-lg font-bold">Drink Category</h2>
-          <button className="text-sm text-silver">See All</button>
+          <button className="text-sm text-silver md:hidden">See All</button>
         </div>
         <CategorySelector />
       </section>
@@ -41,7 +41,7 @@ export default function Home() {
       <section>
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-lg font-bold">Popular</h2>
-          <button className="text-sm text-silver">See All</button>
+          <button className="text-sm text-silver md:hidden">See All</button>
         </div>
         <ProductList />
       </section>
