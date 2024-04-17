@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Navigation() {
   return (
-    <nav className="fixed bottom-0 w-full px-8 py-4 bg-white flex items-center justify-between shadow-nav">
+    <nav className="fixed bottom-0 w-full px-8 py-4 bg-white flex items-center justify-between shadow-nav md:hidden">
       <button className="w-11 h-11 flex items-center justify-center rounded-full bg-primary/10">
         <Image
           className="w-5 h-5 flex items-center justify-center"
