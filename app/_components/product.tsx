@@ -14,7 +14,10 @@ export default function Product({ product }: ProductProps) {
   const price = getPrice(product.skus[0].code);
 
   return (
-    <Link href={productUrl} className="bg-white rounded-xl hover:shadow-md">
+    <Link
+      href={productUrl}
+      className="bg-white rounded-xl hover:shadow-md odd:rounded-tr-[2rem] even:rounded-tl-[2rem]"
+    >
       <div className="p-4 flex flex-col items-center gap-2">
         <h3 className="font-bold">{product.brand}</h3>
 

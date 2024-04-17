@@ -13,7 +13,7 @@ export default function Home() {
   const userFirstName = currentUser.name.split(" ")[0];
 
   return (
-    <main className="px-6 py-10 grid gap-6">
+    <main className="px-6 pt-10 pb-28 grid gap-6">
       <nav className="flex items-center justify-between">
         <Button variant="icon">
           <MenuIcon />

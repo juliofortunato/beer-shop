@@ -14,6 +14,9 @@ const config: Config = {
         primary: "#FF9F24",
         silver: "#C4C4C4",
       },
+      boxShadow: {
+        nav: "0px 10px 50px 0px rgba(15, 13, 35, 0.37)",
+      },
     },
   },
   plugins: [],
