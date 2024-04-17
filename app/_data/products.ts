@@ -86,7 +86,7 @@ const PRODUCTS_MOCK: Product[] = [
   {
     id: 841,
     brand: "Lagunitas IPA",
-    image: "/products/lagunitas.jpg",
+    image: "/products/lagunitas.png",
     style: "Ale",
     substyle: "Indian Pale Ale",
     abv: "6.2%",
