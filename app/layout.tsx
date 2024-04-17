@@ -16,7 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={dmSans.className}>{children}</body>
+      <body className={`md:max-w-[80%] md:mx-auto ${dmSans.className}`}>
+        {children}
+      </body>
     </html>
   );
 }

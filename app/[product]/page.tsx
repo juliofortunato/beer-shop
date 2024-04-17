@@ -25,7 +25,7 @@ export default function ProductPage({ params }: ProductPageProps) {
   const sizes = product.skus.map((sku) => sku.name);
 
   return (
-    <div className="flex flex-col items-center gap-2.5">
+    <div className="flex flex-col items-center gap-2.5 md:flex-row md:mt-10 md:justify-center">
       {product.image && (
         <Image
           className="max-w-[240px] max-h-[240px] object-contain mix-blend-multiply "
@@ -36,7 +36,7 @@ export default function ProductPage({ params }: ProductPageProps) {
         />
       )}
 
-      <section className="bg-white w-full rounded-t-[3rem] px-4 py-9 grid gap-6 fixed bottom-0">
+      <section className="bg-white w-full rounded-t-[3rem] px-4 py-9 grid gap-6 fixed bottom-0 md:relative md:max-w-[40%]">
         <div className="flex flex-col">
           <div className="flex items-center justify-between">
             <h1 className="text-2xl font-bold">{product.brand}</h1>
@@ -49,6 +49,9 @@ export default function ProductPage({ params }: ProductPageProps) {
 
         <div>
           <h2 className="font-bold mb-3">Description</h2>
+          <p className="hidden md:block text-sm text-dusty-gray">
+            {product.information}
+          </p>
           <ReadMore text={product.information} />
         </div>
 

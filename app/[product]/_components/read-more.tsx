@@ -15,7 +15,7 @@ export default function ReadMore({ text, maxLength = 190 }: ReadMoreProps) {
   }
 
   return (
-    <div>
+    <div className="md:hidden">
       {isExpanded ? (
         <>
           <p className="text-sm text-dusty-gray">
