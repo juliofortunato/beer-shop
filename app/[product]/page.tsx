@@ -2,6 +2,7 @@ import { WeightIcon } from "lucide-react";
 import Image from "next/image";
 import Button from "../_components/button";
 import ProductContextProvider from "../_contexts/product/provider";
+import { environment } from "../_helpers/environment";
 import ProductPricing from "./_components/product-pricing";
 import ReadMore from "./_components/read-more";
 import SizeSelector from "./_components/size-selector";
@@ -14,9 +15,10 @@ interface ProductPageProps {
 
 export default async function ProductPage({ params }: ProductPageProps) {
   const id = params.product?.split("-")[0];
+  const { apiBaseUrl } = environment;
 
   const { data: product } = await (
-    await fetch(`http://localhost:3000/api/product/${id}`)
+    await fetch(`${apiBaseUrl}/product/${id}`)
   ).json();
 
   if (!product) return <h1>Product not found</h1>;

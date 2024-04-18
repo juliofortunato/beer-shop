@@ -1,17 +1,17 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-
-const baseUrl = "http://localhost:3000/api";
+import { environment } from "../_helpers/environment";
 
 export function usePolling<T>(endpoint: string) {
+  const { apiBaseUrl } = environment;
   const [data, setData] = useState<T | null>(null);
 
   const fetchData = useCallback(async () => {
-    const response = await fetch(`${baseUrl}${endpoint}`);
+    const response = await fetch(`${apiBaseUrl}${endpoint}`);
     const json = await response.json();
     setData(json.data as T);
-  }, [endpoint, setData]);
+  }, [apiBaseUrl, endpoint, setData]);
 
   useEffect(() => {
     fetchData();

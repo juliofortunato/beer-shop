@@ -5,6 +5,7 @@ import CategorySelector from "./_components/category-selector";
 import Navigation from "./_components/navigation";
 import ProductList from "./_components/product-list";
 import SearchInput from "./_components/search-input";
+import { environment } from "./_helpers/environment";
 
 const currentUser = {
   name: "Michael Scott",
@@ -12,9 +13,10 @@ const currentUser = {
 
 export default async function Home() {
   const userFirstName = currentUser.name.split(" ")[0];
+  const { apiBaseUrl } = environment;
 
   const { data: products } = await (
-    await fetch("http://localhost:3000/api/product")
+    await fetch(`${apiBaseUrl}/product`)
   ).json();
 
   return (
