@@ -1,36 +1,38 @@
 "use client";
 
+import { ProductContext } from "@/app/_contexts/product/context";
+import { Product } from "@/app/_data/products";
 import clsx from "clsx";
-import { MouseEvent, useState } from "react";
+import { useContext } from "react";
 
 interface SizeSelectorProps {
-  sizes: string[];
+  product: Product;
 }
 
-export default function SizeSelector({ sizes }: SizeSelectorProps) {
-  const [selectedSize, setSelectedSize] = useState<string>(sizes[0]);
+export default function SizeSelector({ product }: SizeSelectorProps) {
+  const { activeSKU, selectSKU } = useContext(ProductContext);
 
-  function handleChangeSelectedSize(e: MouseEvent<HTMLButtonElement>) {
-    setSelectedSize(e.currentTarget.innerText);
-  }
+  const handleChangeSelectedSize = (sku: string) => {
+    return () => selectSKU?.(sku);
+  };
 
   return (
     <div className="flex items-center gap-4 overflow-x-auto">
-      {sizes.map((size, idx) => {
+      {product.skus.map((sku, idx) => {
         const classes = clsx(
           "rounded-full px-4 py-2 text-sm border text-nowrap",
           {
-            "border-dusty-gray text-dusty-gray": selectedSize !== size,
-            "border-primary text-primary": selectedSize === size,
+            "border-dusty-gray text-dusty-gray": activeSKU !== sku.code,
+            "border-primary text-primary": activeSKU === sku.code,
           }
         );
         return (
           <button
             className={classes}
             key={idx}
-            onClick={handleChangeSelectedSize}
+            onClick={handleChangeSelectedSize(sku.code)}
           >
-            {size}
+            {sku.name}
           </button>
         );
       })}

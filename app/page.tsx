@@ -10,8 +10,12 @@ const currentUser = {
   name: "Michael Scott",
 };
 
-export default function Home() {
+export default async function Home() {
   const userFirstName = currentUser.name.split(" ")[0];
+
+  const { data: products } = await (
+    await fetch("http://localhost:3000/api/product")
+  ).json();
 
   return (
     <>
@@ -45,7 +49,7 @@ export default function Home() {
             <h2 className="text-lg font-bold">Popular</h2>
             <button className="text-sm text-silver md:hidden">See All</button>
           </div>
-          <ProductList />
+          <ProductList products={products} />
         </section>
       </main>
 
