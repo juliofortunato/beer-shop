@@ -27,7 +27,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
   return (
     <ProductContextProvider initialSKU={firstSKU}>
-      <div className="flex flex-col items-center gap-2.5 md:flex-row md:mt-10 md:justify-center">
+      <div className="flex flex-col items-center gap-2.5 sm:flex-row sm:mt-10 sm:justify-center">
         {product.image && (
           <Image
             className="max-w-[240px] max-h-[240px] object-contain mix-blend-multiply "
@@ -38,12 +38,12 @@ export default async function ProductPage({ params }: ProductPageProps) {
           />
         )}
 
-        <section className="bg-white w-full rounded-t-[3rem] px-4 py-9 grid gap-6 fixed bottom-0 md:relative md:max-w-[40%]">
+        <section className="bg-white w-full rounded-t-[3rem] px-4 py-9 grid gap-6 fixed bottom-0 sm:relative sm:max-w-[40%]">
           <ProductPricing product={product} />
 
           <div>
             <h2 className="font-bold mb-3">Description</h2>
-            <p className="hidden md:block text-sm text-dusty-gray">
+            <p className="hidden lg:block text-sm text-dusty-gray">
               {product.information}
             </p>
             <ReadMore text={product.information} />

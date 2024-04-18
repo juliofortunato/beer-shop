@@ -41,7 +41,7 @@ export default async function Home() {
         <section>
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-lg font-bold">Drink Category</h2>
-            <button className="text-sm text-silver md:hidden">See All</button>
+            <button className="text-sm text-silver lg:hidden">See All</button>
           </div>
           <CategorySelector />
         </section>
@@ -49,7 +49,7 @@ export default async function Home() {
         <section>
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-lg font-bold">Popular</h2>
-            <button className="text-sm text-silver md:hidden">See All</button>
+            <button className="text-sm text-silver lg:hidden">See All</button>
           </div>
           <ProductList products={products} />
         </section>
